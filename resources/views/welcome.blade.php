@@ -5,7 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WasteWise</title>
-  @vite('resources/css/app.css')
+  @vite([
+  'resources/css/app.css',
+  'resources/js/auth.js'
+  ])
 </head>
 
 <body>
@@ -18,26 +21,27 @@
 
       <div class="p-5 text-sm/7 w-full">
         <h2 class="text-white font-bold text-4xl sm:text-5xl">Welcome to Waste<span class="text-green-600">Watch</span></h2>
-        <h3 class="text-3xl sm:text-4xl font-bold mt-2">Earn by reporting <span id="report" class="text-green-600"></span></h3>
-        <p class="text-lg sm:text-xl mt-5">WasteWatch is a user-friendly system designed to help individuals and communities report waste effectively. Our platform enables users to easily log and track waste, providing valuable insights into waste management practices and identifying areas for improvement. By promoting transparency and accountability, WasteWatch aims to contribute to a more sustainable future for our planet.</p>
+        <h3 class="text-3xl sm:text-4xl font-bold mt-2 text-white">Earn by reporting <span id="report" class="text-green-600"></span></h3>
+        <p class="text-lg sm:text-xl mt-5 text-white">WasteWatch is a user-friendly system designed to help individuals and communities report waste effectively. Our platform enables users to easily log and track waste, providing valuable insights into waste management practices and identifying areas for improvement. By promoting transparency and accountability, WasteWatch aims to contribute to a more sustainable future for our planet.</p>
+        <div class="flex flex-col mt-5 gap-4 sm:flex-row">
+          <a href="#" id="reportWasteBtn" class="text-green-50 hover:text-green-500"><button class="w-full border-2 border-green-500 rounded py-2 px-6 text-base bg-green-500 hover:text-green hover:bg-transparent hover:border-2 hover:border-green-500 transition-colors sm:w-auto sm:text-lg md:text-xl">Report Waste</button></a>
+          <a href="#" id="reportLittererBtn" class="text-green-500 hover:text-green-50"><button class="w-full border-2 border-green-500 rounded py-2 px-6 text-base text-green hover:bg-green-500 hover:text-green-50 transition-colors sm:w-auto sm:text-lg md:text-xl">Report Litterer</button></a>
+        </div>
       </div>
 
       <div class="p-5 min-h-125 w-full flex justify-center">
-        <form class="max-w-96 w-full text-center border border-gray-300/60 rounded-2xl px-8 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-0">
+        <!-- login form -->
+        <form id="login-form" class="hidden max-w-96 w-full text-center border border-gray-300/60 rounded-2xl px-8 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-0">
           <h1 class="text-macha-dark text-3xl mt-10 font-bold">Login</h1>
           <p class="text-white text-sm mt-2">Please sign in to continue</p>
-          <div class="flex items-center w-full mt-10 bg-white border border-gray-300/80 h-12 rounded-full overflow-hidden pl-6 gap-2">
-            <svg width="16" height="11" viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M0 .55.571 0H15.43l.57.55v9.9l-.571.55H.57L0 10.45zm1.143 1.138V9.9h13.714V1.69l-6.503 4.8h-.697zM13.749 1.1H2.25L8 5.356z" fill="#6B7280" />
-            </svg>
-            <input type="email" placeholder="Email" class="bg-transparent text-white placeholder-gray-500 outline-none text-sm w-full h-full" required>
+          <div class="flex items-center border border-gray-300/60 w-full mt-10 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-0 h-12 rounded-md overflow-hidden pl-2 gap-2">
+            <x-eva-email-outline class="h-6" />
+            <input type="email" placeholder="Email" class="bg-transparent text-white placeholder-amber-50 outline-none text-sm w-full h-full" required>
           </div>
 
-          <div class="flex items-center mt-4 w-full bg-white border border-gray-300/80 h-12 rounded-full overflow-hidden pl-6 gap-2">
-            <svg width="13" height="17" viewBox="0 0 13 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M13 8.5c0-.938-.729-1.7-1.625-1.7h-.812V4.25C10.563 1.907 8.74 0 6.5 0S2.438 1.907 2.438 4.25V6.8h-.813C.729 6.8 0 7.562 0 8.5v6.8c0 .938.729 1.7 1.625 1.7h9.75c.896 0 1.625-.762 1.625-1.7zM4.063 4.25c0-1.406 1.093-2.55 2.437-2.55s2.438 1.144 2.438 2.55V6.8H4.061z" fill="#6B7280" />
-            </svg>
-            <input type="password" placeholder="Password" class="bg-transparent text-gray-500 placeholder-gray-500 outline-none text-sm w-full h-full" required>
+          <div class="flex items-center mt-4 w-full border border-gray-300/60 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-0 h-12 rounded-lg overflow-hidden pl-2 gap-2">
+            <x-bi-lock-fill class="h-6" />
+            <input type="password" placeholder="Password" class="bg-transparent text-white placeholder-amber-50 outline-none text-sm w-full h-full" required>
           </div>
           <div class="mt-5 text-left text-macha-medium">
             <a class="text-sm" href="#">Forgot password?</a>
@@ -46,7 +50,48 @@
           <button type="submit" class="mt-2 w-full h-11 rounded-full text-white bg-macha-dark hover:opacity-90 transition-opacity">
             Login
           </button>
-          <p class="text-white text-sm mt-3 mb-11">Don’t have an account? <a class="text-macha-medium" href="#">Sign up</a></p>
+          <p class="text-white text-sm mt-3 mb-11">Don’t have an account? <a class="text-macha-medium" id="toggle-to-signup">Sign up</a></p>
+        </form>
+
+        <!-- //sign up form -->
+        <form id="signup-form" class="hidden max-w-96 w-full text-center border border-gray-300/60 rounded-2xl px-8 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-0">
+          <h1 class="text-macha-dark text-3xl mt-10 font-bold">Create an account</h1>
+          <p class="text-white text-sm mt-2">create an account to continue</p>
+
+          <!-- full name -->
+          <div class="flex items-center mt-4 w-full border border-gray-300/60 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-0 h-12 rounded-lg overflow-hidden pl-2 gap-2">
+            <x-feathericon-user class="h-6" />
+            <input type="password" placeholder="Password" class="bg-transparent text-white placeholder-amber-50 outline-none text-sm w-full h-full" required>
+          </div>
+
+          <!-- email -->
+          <div class="flex items-center border border-gray-300/60 w-full mt-6 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-0 h-12 rounded-md overflow-hidden pl-2 gap-2">
+            <x-eva-email-outline class="h-6" />
+            <input type="email" placeholder="Email" class="bg-transparent text-white placeholder-amber-50 outline-none text-sm w-full h-full" required>
+          </div>
+
+          <!-- password -->
+          <div class="flex items-center mt-4 w-full border border-gray-300/60 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-0 h-12 rounded-lg overflow-hidden pl-2 gap-2">
+            <x-bi-lock-fill class="h-6" />
+            <input type="password" placeholder="Password" class="bg-transparent text-white placeholder-amber-50 outline-none text-sm w-full h-full" required>
+          </div>
+
+          <!-- confirm password -->
+          <div class="flex items-center mt-4 w-full border border-gray-300/60 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-0 h-12 rounded-lg overflow-hidden pl-2 gap-2">
+            <x-bi-lock-fill class="h-6" />
+            <input type="confirm_password" placeholder="Confirm Password" class="bg-transparent text-white placeholder-amber-50 outline-none text-sm w-full h-full" required>
+          </div>
+
+          <!-- forgot password -->
+          <div class="flex p-2">
+            <a href="" class="text-white">forgot password?</a>
+          </div>
+
+
+          <button type="submit" class="mt-2 w-full h-11 rounded-full text-white bg-macha-dark hover:opacity-90 transition-opacity">
+            Signup
+          </button>
+          <p id="to-login" class="text-white text-sm mt-3 mb-11">Already have an account? <a class="text-macha-medium" id="toggle-to-login">Sign in</a></p>
         </form>
       </div>
     </div>
@@ -70,20 +115,6 @@
       .typeString('Litterer')
       .pauseFor(2000)
       .start();
-  </script>
-  <script>
-    const el = document.getElementById('landing');
-
-    function updateBg() {
-      if (window.innerWidth < 640) {
-        el.style.backgroundImage = "url('/images/landing-portrait.jpg')";
-      } else {
-        el.style.backgroundImage = "url('/images/landing.jpg')";
-      }
-    }
-
-    updateBg();
-    window.addEventListener('resize', updateBg);
   </script>
 </body>
 
