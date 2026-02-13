@@ -13,3 +13,6 @@ Route::post('/login', [AuthController::class, 'login']);
 
 //signup
 Route::post('/signup', [AuthController::class, 'signup']);
+
+//home page
+Route::get('/home', [AuthController::class, 'index']);

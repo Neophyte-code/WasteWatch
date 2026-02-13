@@ -44,4 +44,3 @@ document.addEventListener('DOMContentLoaded', () => {
     updateBg();
     window.addEventListener('resize', updateBg);
 
-

@@ -1,5 +1,6 @@
 <header>
     <div class="navbar bg-base-100 shadow-sm">
+        <!-- logo -->
         <div class="navbar-start">
             <div class="dropdown">
                 <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -10,36 +11,44 @@
                 <ul
                     tabindex="-1"
                     class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                    <li><a>Item 1</a></li>
+                    <li><a>Home</a></li>
+                    <li><a>About</a></li>
+                    <li><a>Contact</a></li>
+                    <li><a>Announcement</a></li>
                     <li>
-                        <a>Parent</a>
+                        <a>Report</a>
                         <ul class="p-2">
-                            <li><a>Submenu 1</a></li>
-                            <li><a>Submenu 2</a></li>
+                            <li><a>Report Waste</a></li>
+                            <li><a>Report Litterer</a></li>
                         </ul>
                     </li>
-                    <li><a>Item 3</a></li>
                 </ul>
             </div>
-            <a class="btn btn-ghost text-xl">daisyUI</a>
+            <a href="/home" class="font-extrabold text-xl sm:text-2xl ">Waste<span class="text-green-600">Watch</span></a>
         </div>
+
+        <!-- mid part -->
         <div class="navbar-center hidden lg:flex">
             <ul class="menu menu-horizontal px-1">
-                <li><a>Item 1</a></li>
+                <li class="hover:text-macha-medium"><a>Home</a></li>
+                <li class="hover:text-macha-medium"><a>About</a></li>
+                <li class="hover:text-macha-medium"><a>Contact</a></li>
+                <li class="hover:text-macha-medium"><a>Announcement</a></li>
                 <li>
                     <details>
-                        <summary>Parent</summary>
+                        <summary class="hover:text-macha-medium">Report</summary>
                         <ul class="p-2 bg-base-100 w-40 z-1">
-                            <li><a>Submenu 1</a></li>
-                            <li><a>Submenu 2</a></li>
+                            <li class="hover:text-macha-medium"><a>Report Waste</a></li>
+                            <li class="hover:text-macha-medium"><a>Report Litterer</a></li>
                         </ul>
                     </details>
                 </li>
-                <li><a>Item 3</a></li>
             </ul>
         </div>
+
+        <!-- profile and notification -->
         <div class="navbar-end">
-            <a class="btn">Button</a>
+
         </div>
-    </div>
+
 </header>

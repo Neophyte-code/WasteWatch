@@ -10,31 +10,52 @@ use Illuminate\Support\Facades\Hash;
 class AuthController extends Controller
 {
     //function for login
-    public function login()
+    public function login(Request $request)
     {
-        dd('login controller is reach');
+        $credentials = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required'
+        ]);
+
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+            return redirect('/home');
+        }
+
+        return back()->with('error', 'Invalid email or password');
     }
 
     //function for signup
     public function signup(Request $request)
     {
-        //validate
+        // Validate
         $data = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'email|required|unique:users',
             'password' => 'required|min:8|confirmed'
         ]);
 
-        //create user
+        // Create user
         $user = User::create([
-            'name' => $data['fullname'],
-            'email' => $data['email'],
+            'name'     => $data['name'],
+            'email'    => $data['email'],
             'password' => Hash::make($data['password'])
         ]);
 
-        //auto login
+        // Login the user
         Auth::login($user);
 
-        return redirect('/home');
+        // Regenerate session
+        $request->session()->regenerate();
+
+        // Redirect
+        return redirect('/home')->with('success', 'Account created successfully!');
+    }
+
+
+    //function to show homepage
+    public function index()
+    {
+        return view('pages.home');
     }
 }
