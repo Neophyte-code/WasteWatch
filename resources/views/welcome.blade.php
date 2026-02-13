@@ -30,18 +30,20 @@
       </div>
 
       <div class="p-5 min-h-125 w-full flex justify-center">
+
         <!-- login form -->
-        <form id="login-form" class="hidden max-w-96 w-full text-center border border-gray-300/60 rounded-2xl px-8 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-0">
+        <form id="login-form" action="/login" method="POST" class="hidden max-w-96 w-full text-center border border-gray-300/60 rounded-2xl px-8 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-0">
+          @csrf
           <h1 class="text-macha-dark text-3xl mt-10 font-bold">Login</h1>
           <p class="text-white text-sm mt-2">Please sign in to continue</p>
           <div class="flex items-center border border-gray-300/60 w-full mt-10 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-0 h-12 rounded-md overflow-hidden pl-2 gap-2">
             <x-eva-email-outline class="h-6" />
-            <input type="email" placeholder="Email" class="bg-transparent text-white placeholder-amber-50 outline-none text-sm w-full h-full" required>
+            <input type="email" name="name" placeholder="email" class="bg-transparent text-white placeholder-amber-50 outline-none text-sm w-full h-full" required>
           </div>
 
           <div class="flex items-center mt-4 w-full border border-gray-300/60 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-0 h-12 rounded-lg overflow-hidden pl-2 gap-2">
             <x-bi-lock-fill class="h-6" />
-            <input type="password" placeholder="Password" class="bg-transparent text-white placeholder-amber-50 outline-none text-sm w-full h-full" required>
+            <input type="password" name="password" placeholder="Password" class="bg-transparent text-white placeholder-amber-50 outline-none text-sm w-full h-full" required>
           </div>
           <div class="mt-5 text-left text-macha-medium">
             <a class="text-sm" href="#">Forgot password?</a>
@@ -53,45 +55,43 @@
           <p class="text-white text-sm mt-3 mb-11">Don’t have an account? <a class="text-macha-medium" id="toggle-to-signup">Sign up</a></p>
         </form>
 
-        <!-- //sign up form -->
-        <form id="signup-form" class="hidden max-w-96 w-full text-center border border-gray-300/60 rounded-2xl px-8 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-0">
+        <!-- sign up form -->
+        <form id="signup-form" action="/signup" method="POST" class="{{ $errors->any() ? '' : 'hidden' }} max-w-96 w-full text-center border border-gray-300/60 rounded-2xl px-8 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10">
+          @csrf
           <h1 class="text-macha-dark text-3xl mt-10 font-bold">Create an account</h1>
           <p class="text-white text-sm mt-2">create an account to continue</p>
 
           <!-- full name -->
           <div class="flex items-center mt-4 w-full border border-gray-300/60 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-0 h-12 rounded-lg overflow-hidden pl-2 gap-2">
             <x-feathericon-user class="h-6" />
-            <input type="password" placeholder="Password" class="bg-transparent text-white placeholder-amber-50 outline-none text-sm w-full h-full" required>
+            <input type="name" name="name" placeholder="Full name" class="bg-transparent text-white placeholder-amber-50 outline-none text-sm w-full h-full" required>
           </div>
 
           <!-- email -->
           <div class="flex items-center border border-gray-300/60 w-full mt-6 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-0 h-12 rounded-md overflow-hidden pl-2 gap-2">
             <x-eva-email-outline class="h-6" />
-            <input type="email" placeholder="Email" class="bg-transparent text-white placeholder-amber-50 outline-none text-sm w-full h-full" required>
+            <input type="email" name="email" placeholder="Email" class="bg-transparent text-white placeholder-amber-50 outline-none text-sm w-full h-full" required>
           </div>
 
           <!-- password -->
           <div class="flex items-center mt-4 w-full border border-gray-300/60 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-0 h-12 rounded-lg overflow-hidden pl-2 gap-2">
             <x-bi-lock-fill class="h-6" />
-            <input type="password" placeholder="Password" class="bg-transparent text-white placeholder-amber-50 outline-none text-sm w-full h-full" required>
+            <input type="password" name="password" placeholder="Password" class="bg-transparent text-white placeholder-amber-50 outline-none text-sm w-full h-full" required>
           </div>
 
           <!-- confirm password -->
           <div class="flex items-center mt-4 w-full border border-gray-300/60 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-0 h-12 rounded-lg overflow-hidden pl-2 gap-2">
             <x-bi-lock-fill class="h-6" />
-            <input type="confirm_password" placeholder="Confirm Password" class="bg-transparent text-white placeholder-amber-50 outline-none text-sm w-full h-full" required>
+            <input type="password" name="confirm_password" placeholder="Confirm Password" class="bg-transparent text-white placeholder-amber-50 outline-none text-sm w-full h-full" required>
           </div>
 
-          <!-- forgot password -->
-          <div class="flex p-2">
-            <a href="" class="text-white">forgot password?</a>
-          </div>
-
-
-          <button type="submit" class="mt-2 w-full h-11 rounded-full text-white bg-macha-dark hover:opacity-90 transition-opacity">
+          <button type="submit" class="mt-5 w-full h-11 rounded-full text-white bg-macha-dark hover:opacity-90 transition-opacity">
             Signup
           </button>
-          <p id="to-login" class="text-white text-sm mt-3 mb-11">Already have an account? <a class="text-macha-medium" id="toggle-to-login">Sign in</a></p>
+
+          <p id="to-login" class="text-white text-center text-sm mt-3">Already have an account? <a class="text-macha-medium" id="toggle-to-login">Sign in</a></p>
+
+          <x-errorMessage />
         </form>
       </div>
     </div>
