@@ -1,11 +1,12 @@
 import { Link, usePage } from '@inertiajs/react';
-import { BookOpen, Folder, LayoutGrid, Menu, Search } from 'lucide-react';
+import { Bell, ChevronDown, Menu, Search } from 'lucide-react';
 import { Breadcrumbs } from '@/components/breadcrumbs';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import {
     DropdownMenu,
     DropdownMenuContent,
+    DropdownMenuItem,
     DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import {
@@ -42,23 +43,42 @@ type Props = {
 
 const mainNavItems: NavItem[] = [
     {
-        title: 'Dashboard',
+        title: 'Home',
         href: dashboard(),
-        icon: LayoutGrid,
+    },
+    {
+        title: 'About',
+        href: '',
+    },
+    {
+        title: 'Contact',
+        href: '',
+    },
+    {
+        title: 'Announcement',
+        href: '',
+    },
+    {
+        title: 'Report',
+        href: '',
+        children: [
+            { title: 'Report Waste', href: '#' },
+            { title: 'Report Litterer', href: '#' },
+        ],
     },
 ];
 
 const rightNavItems: NavItem[] = [
-    {
-        title: 'Repository',
-        href: 'https://github.com/laravel/react-starter-kit',
-        icon: Folder,
-    },
-    {
-        title: 'Documentation',
-        href: 'https://laravel.com/docs/starter-kits#react',
-        icon: BookOpen,
-    },
+    // {
+    //     title: 'Repository',
+    //     href: 'https://github.com/laravel/react-starter-kit',
+    //     icon: Folder,
+    // },
+    // {
+    //     title: 'Documentation',
+    //     href: 'https://laravel.com/docs/starter-kits#react',
+    //     icon: BookOpen,
+    // },
 ];
 
 const activeItemStyles =
@@ -137,53 +157,105 @@ export function AppHeader({ breadcrumbs = [] }: Props) {
                     <Link
                         href={dashboard()}
                         prefetch
-                        className="flex items-center space-x-2"
+                        className="flex flex-1 items-center space-x-2"
                     >
                         <AppLogo />
                     </Link>
 
                     {/* Desktop Navigation */}
-                    <div className="ml-6 hidden h-full items-center space-x-6 lg:flex">
+                    <div className="hidden h-full items-center space-x-6 lg:flex">
                         <NavigationMenu className="flex h-full items-stretch">
                             <NavigationMenuList className="flex h-full items-stretch space-x-2">
-                                {mainNavItems.map((item, index) => (
-                                    <NavigationMenuItem
-                                        key={index}
-                                        className="relative flex h-full items-center"
-                                    >
-                                        <Link
-                                            href={item.href}
-                                            className={cn(
-                                                navigationMenuTriggerStyle(),
-                                                whenCurrentUrl(
-                                                    item.href,
-                                                    activeItemStyles,
-                                                ),
-                                                'h-9 cursor-pointer px-3',
-                                            )}
+                                {mainNavItems.map((item, index) => {
+                                    const hasChildren =
+                                        item.children &&
+                                        item.children.length > 0;
+
+                                    return (
+                                        <NavigationMenuItem
+                                            key={index}
+                                            className="relative flex h-full items-center"
                                         >
-                                            {item.icon && (
-                                                <item.icon className="mr-2 h-4 w-4" />
+                                            {hasChildren ? (
+                                                /* Render as a Dropdown */
+                                                <DropdownMenu>
+                                                    <DropdownMenuTrigger
+                                                        className={cn(
+                                                            navigationMenuTriggerStyle(),
+                                                            'flex h-9 cursor-pointer items-center gap-1 px-3 hover:text-green-600',
+                                                        )}
+                                                    >
+                                                        {item.title}
+                                                        <ChevronDown className="h-3 w-3 opacity-50" />
+                                                    </DropdownMenuTrigger>
+                                                    <DropdownMenuContent
+                                                        align="start"
+                                                        className="w-48"
+                                                    >
+                                                        {item.children?.map(
+                                                            (
+                                                                child,
+                                                                childIdx,
+                                                            ) => (
+                                                                <DropdownMenuItem
+                                                                    key={
+                                                                        childIdx
+                                                                    }
+                                                                    asChild
+                                                                    className="cursor-pointer focus:text-green-600"
+                                                                >
+                                                                    <Link
+                                                                        href={
+                                                                            child.href
+                                                                        }
+                                                                        className="w-full cursor-pointer"
+                                                                    >
+                                                                        {
+                                                                            child.title
+                                                                        }
+                                                                    </Link>
+                                                                </DropdownMenuItem>
+                                                            ),
+                                                        )}
+                                                    </DropdownMenuContent>
+                                                </DropdownMenu>
+                                            ) : (
+                                                /* Render as a standard Link */
+                                                <Link
+                                                    href={item.href}
+                                                    className={cn(
+                                                        navigationMenuTriggerStyle(),
+                                                        whenCurrentUrl(
+                                                            item.href,
+                                                            activeItemStyles,
+                                                        ),
+                                                        'h-9 cursor-pointer px-3 hover:text-green-600',
+                                                    )}
+                                                >
+                                                    {item.title}
+                                                </Link>
                                             )}
-                                            {item.title}
-                                        </Link>
-                                        {isCurrentUrl(item.href) && (
-                                            <div className="absolute bottom-0 left-0 h-0.5 w-full translate-y-px bg-black dark:bg-white"></div>
-                                        )}
-                                    </NavigationMenuItem>
-                                ))}
+
+                                            {/* Active Underline logic */}
+                                            {isCurrentUrl(item.href) && (
+                                                <div className="absolute bottom-0 left-0 h-0.5 w-full translate-y-px bg-green-600 dark:bg-white"></div>
+                                            )}
+                                        </NavigationMenuItem>
+                                    );
+                                })}
                             </NavigationMenuList>
                         </NavigationMenu>
                     </div>
 
-                    <div className="ml-auto flex items-center space-x-2">
-                        <div className="relative flex items-center space-x-1">
+                    {/* notification and profile */}
+                    <div className="flex flex-1 items-center justify-end space-x-2">
+                        <div className="flex items-center">
                             <Button
                                 variant="ghost"
                                 size="icon"
                                 className="group h-9 w-9 cursor-pointer"
                             >
-                                <Search className="!size-5 opacity-80 group-hover:opacity-100" />
+                                <Bell className="!size-5 opacity-80 group-hover:opacity-100" />
                             </Button>
                             <div className="ml-1 hidden gap-1 lg:flex">
                                 {rightNavItems.map((item) => (
