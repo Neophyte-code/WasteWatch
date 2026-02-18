@@ -16,9 +16,8 @@ export default function Dashboard() {
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
             <Head title="Dashboard" />
-            <div className="flex h-full flex-1 gap-4 overflow-x-auto rounded-xl border-2 border-gray-400 p-4">
-                <div className="relative flex min-h-[100vh] flex-2 flex-col justify-center overflow-hidden rounded-xl border border-sidebar-border/70 text-base/8 md:min-h-min dark:border-sidebar-border">
-                    {/* <PlaceholderPattern className="absolute inset-0 size-full stroke-neutral-900/20 dark:stroke-neutral-100/20" /> */}
+            <div className="flex h-full flex-1 gap-4 overflow-x-auto rounded-xl p-4">
+                <div className="relative flex min-h-[100vh] flex-2 flex-col justify-center overflow-hidden rounded-xl text-base/8 md:min-h-min">
                     <h2 className="text-4xl font-bold">
                         Welcome to Waste
                         <span className="text-green-600">Watch</span>
@@ -35,13 +34,15 @@ export default function Dashboard() {
                         planet.
                     </p>
                     <div className="mt-4 flex gap-4">
-                        <Button className="bg-green-600">Report Waste</Button>
-                        <Button className="border-2 border-green-600 bg-transparent text-black">
+                        <Button className="h-10 border-2 border-green-600 bg-green-600 font-bold hover:bg-transparent hover:text-black dark:text-white">
+                            Report Waste
+                        </Button>
+                        <Button className="h-10 border-2 border-green-600 bg-transparent font-bold text-black hover:bg-green-600 hover:text-white dark:text-white">
                             Report Litterer
                         </Button>
                     </div>
                 </div>
-                <div className="relative flex min-h-[100vh] flex-1 items-center justify-center overflow-hidden rounded-xl border border-sidebar-border/70 md:min-h-min dark:border-sidebar-border">
+                <div className="relative flex min-h-[100vh] flex-1 items-center justify-center overflow-hidden rounded-xl md:min-h-min">
                     <img
                         src="/images/logo.png"
                         alt="logo"
