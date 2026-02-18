@@ -1,5 +1,4 @@
 import { Head } from '@inertiajs/react';
-import { PlaceholderPattern } from '@/components/ui/placeholder-pattern';
 import AppLayout from '@/layouts/app-layout';
 import type { BreadcrumbItem } from '@/types';
 import { dashboard } from '@/routes';
@@ -34,10 +33,10 @@ export default function Dashboard() {
                         planet.
                     </p>
                     <div className="mt-4 flex gap-4">
-                        <Button className="h-10 border-2 border-green-600 bg-green-600 font-bold hover:bg-transparent hover:text-black dark:text-white">
+                        <Button className="h-10 border-2 border-green-600 bg-green-600 font-bold hover:bg-transparent hover:text-green-600 dark:text-white">
                             Report Waste
                         </Button>
-                        <Button className="h-10 border-2 border-green-600 bg-transparent font-bold text-black hover:bg-green-600 hover:text-white dark:text-white">
+                        <Button className="h-10 border-2 border-green-600 bg-transparent font-bold text-green-600 hover:bg-green-600 hover:text-white dark:text-white">
                             Report Litterer
                         </Button>
                     </div>

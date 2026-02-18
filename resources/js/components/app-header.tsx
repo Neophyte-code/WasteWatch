@@ -1,5 +1,5 @@
 import { Link, usePage } from '@inertiajs/react';
-import { Bell, ChevronDown, Menu, Search } from 'lucide-react';
+import { Bell, ChevronDown, Menu } from 'lucide-react';
 import { Breadcrumbs } from '@/components/breadcrumbs';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
@@ -48,22 +48,22 @@ const mainNavItems: NavItem[] = [
     },
     {
         title: 'About',
-        href: '',
+        href: '/about',
     },
     {
         title: 'Contact',
-        href: '',
+        href: '/contact',
     },
     {
         title: 'Announcement',
-        href: '',
+        href: '/announcement',
     },
     {
         title: 'Report',
         href: '',
         children: [
-            { title: 'Report Waste', href: '#' },
-            { title: 'Report Litterer', href: '#' },
+            { title: 'Report Waste', href: '/report-waste' },
+            { title: 'Report Litterer', href: '/report-litterer' },
         ],
     },
 ];
