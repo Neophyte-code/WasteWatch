@@ -70,15 +70,15 @@ export default function About() {
 
                             <div className="grid grid-cols-2 gap-10 pt-8">
                                 <div className="text-center">
-                                    <div className="text-6xl font-black text-green-500">
-                                        12,000+
+                                    <div className="lg:4xl text-6xl font-black text-green-500">
+                                        12k
                                     </div>
                                     <div className="mt-2 text-lg">
                                         Reports submitted
                                     </div>
                                 </div>
                                 <div className="text-center">
-                                    <div className="text-6xl font-black text-yellow-500">
+                                    <div className="lg:4xl text-6xl font-black text-yellow-500">
                                         81%
                                     </div>
                                     <div className="mt-2 text-lg">
@@ -88,67 +88,64 @@ export default function About() {
                             </div>
                         </div>
 
-                        <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-white/15 shadow-2xl backdrop-blur-2xl lg:aspect-square">
+                        <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-white/15 shadow-2xl backdrop-blur-2xl hover:shadow-lg hover:shadow-neutral-500 lg:aspect-square">
                             <div className="absolute inset-0 flex items-center justify-center bg-[url(/images/seedling.jpg)] bg-cover px-10 text-center text-white"></div>
                         </div>
                     </div>
                 </section>
 
                 {/* Values  */}
-                <section
-                    id="values"
-                    className="relative bg-gradient-to-b from-transparent via-white/15 to-transparent py-24 md:py-32"
-                >
+                <section id="values" className="relative py-24 md:py-32">
                     <div className="mx-auto max-w-6xl px-6">
                         <h2 className="mb-16 text-center text-4xl font-extrabold sm:text-5xl lg:text-6xl">
                             Core Values
                         </h2>
 
                         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-                            <div className="flex flex-col items-start rounded-3xl border border-white/20 p-8 shadow-xl">
-                                <div className="mb-6 flex h-20 w-20 items-center justify-center self-center rounded-2xl bg-gray-200 text-5xl">
+                            <div className="flex flex-col items-start rounded-3xl border border-white/20 p-8 shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-neutral-500">
+                                <div className="mb-6 flex h-20 w-20 items-center justify-center self-center rounded-2xl bg-gray-200 text-5xl dark:border dark:border-white/20 dark:bg-gray-900">
                                     ⚡
                                 </div>
                                 <h3 className="mb-4 text-2xl font-bold">
                                     Speed
                                 </h3>
-                                <p className="font-light text-slate-700">
+                                <p className="font-light text-slate-700 dark:text-slate-300">
                                     Instant reporting, rapid municipal response
                                 </p>
                             </div>
 
-                            <div className="flex flex-col items-start rounded-3xl border border-white/20 p-8 shadow-xl">
-                                <div className="mb-6 flex h-20 w-20 items-center justify-center self-center rounded-2xl bg-gray-200 text-5xl">
+                            <div className="flex flex-col items-start rounded-3xl border border-white/20 p-8 shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-neutral-500">
+                                <div className="mb-6 flex h-20 w-20 items-center justify-center self-center rounded-2xl bg-gray-200 text-5xl dark:border dark:border-white/20 dark:bg-gray-900">
                                     🔍
                                 </div>
                                 <h3 className="mb-4 text-2xl font-bold">
                                     Transparency
                                 </h3>
-                                <p className="font-light text-slate-700">
+                                <p className="font-light text-slate-700 dark:text-slate-300">
                                     Public status updates for every report
                                 </p>
                             </div>
 
-                            <div className="flex flex-col items-start rounded-3xl border border-white/20 p-8 shadow-xl">
-                                <div className="bg-gray-20 mb-6 flex h-20 w-20 items-center justify-center self-center rounded-2xl bg-gray-200 text-5xl">
+                            <div className="flex flex-col items-start rounded-3xl border border-white/20 p-8 shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-neutral-500">
+                                <div className="bg-gray-20 mb-6 flex h-20 w-20 items-center justify-center self-center rounded-2xl bg-gray-200 text-5xl dark:border dark:border-white/20 dark:bg-gray-900">
                                     🤝
                                 </div>
                                 <h3 className="mb-4 text-2xl font-bold">
                                     Community
                                 </h3>
-                                <p className="font-light text-slate-700">
+                                <p className="font-light text-slate-700 dark:text-slate-300">
                                     Designed with and for Daanbantayan residents
                                 </p>
                             </div>
 
-                            <div className="flex flex-col items-start rounded-3xl border border-white/20 p-8 shadow-xl">
-                                <div className="bg-gray-20 mb-6 flex h-20 w-20 items-center justify-center self-center rounded-2xl bg-gray-200 text-5xl">
+                            <div className="flex flex-col items-start rounded-3xl border border-white/20 p-8 shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-neutral-500">
+                                <div className="bg-gray-20 mb-6 flex h-20 w-20 items-center justify-center self-center rounded-2xl bg-gray-200 text-5xl dark:border dark:border-white/20 dark:bg-gray-900">
                                     ♻
                                 </div>
                                 <h3 className="mb-4 text-2xl font-bold">
                                     Sustainability
                                 </h3>
-                                <p className="font-light text-slate-700">
+                                <p className="font-light text-slate-700 dark:text-slate-300">
                                     Building a cleaner, healthier municipality
                                     for the future
                                 </p>
