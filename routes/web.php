@@ -19,4 +19,8 @@ Route::get('/about', function () {
     return Inertia::render('about');
 })->middleware(['auth', 'verified'])->name('about');
 
+Route::get('/contact', function () {
+    return Inertia::render('contact');
+})->middleware(['auth', 'verified'])->name('/contact');
+
 require __DIR__ . '/settings.php';
