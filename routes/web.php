@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use Laravel\Fortify\Features;
+use App\Http\Controllers\AnnouncementController;
+
 
 Route::get('/', function () {
     return Inertia::render('welcome', [
@@ -22,5 +24,7 @@ Route::get('/about', function () {
 Route::get('/contact', function () {
     return Inertia::render('contact');
 })->middleware(['auth', 'verified'])->name('/contact');
+
+Route::get('/announcement', [AnnouncementController::class, 'index'])->name('announcements');
 
 require __DIR__ . '/settings.php';
