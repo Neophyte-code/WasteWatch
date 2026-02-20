@@ -40,26 +40,26 @@ export default function About() {
                             <div className="space-y-12">
                                 {/* Contact Cards */}
                                 <div className="grid gap-6 sm:grid-cols-2">
-                                    <div className="group rounded-2xl border border-gray-100 bg-white p-7 shadow-lg shadow-emerald-100/40 transition-all duration-300 hover:border-emerald-200">
-                                        <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-emerald-100 text-4xl text-emerald-600 transition-colors group-hover:bg-emerald-300 group-hover:text-white">
+                                    <div className="group rounded-2xl border border-gray-100 bg-white p-7 shadow-lg shadow-emerald-200 transition-all duration-300 hover:border-emerald-200 dark:border dark:border-white/20 dark:bg-gray-900 dark:shadow-gray-700">
+                                        <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-emerald-100 text-4xl transition-colors group-hover:bg-emerald-300 group-hover:text-white dark:bg-gray-800 dark:text-gray-200 dark:group-hover:bg-gray-700">
                                             📞
                                         </div>
-                                        <h3 className="mb-2 text-xl font-semibold text-gray-800">
+                                        <h3 className="mb-2 text-xl font-semibold text-gray-800 dark:text-slate-300">
                                             Call Us
                                         </h3>
                                         <a
-                                            href="tel:+421248112233"
+                                            href="tel:+63324373782"
                                             className="mt-1 block font-medium text-emerald-600 hover:text-emerald-700"
                                         >
                                             +63 32 437 3782
                                         </a>
                                     </div>
 
-                                    <div className="group rounded-2xl border border-gray-100 bg-white p-7 shadow-lg shadow-emerald-100/40 transition-all duration-300 hover:border-emerald-200">
-                                        <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-emerald-100 text-4xl text-emerald-600 transition-colors group-hover:bg-emerald-300 group-hover:text-white">
+                                    <div className="group rounded-2xl border border-gray-100 bg-white p-7 shadow-lg shadow-emerald-200 transition-all duration-300 hover:border-emerald-200 dark:border dark:border-white/20 dark:bg-gray-900 dark:shadow-gray-700">
+                                        <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-emerald-100 text-4xl text-emerald-600 transition-colors group-hover:bg-emerald-300 group-hover:text-white dark:bg-gray-800 dark:group-hover:bg-gray-700">
                                             📧
                                         </div>
-                                        <h3 className="mb-2 text-xl font-semibold text-gray-800">
+                                        <h3 className="mb-2 text-xl font-semibold text-gray-800 dark:text-slate-300">
                                             Email
                                         </h3>
                                         <a
@@ -72,42 +72,46 @@ export default function About() {
                                 </div>
 
                                 {/* Contact Form  */}
-                                <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-xl shadow-gray-200/30 lg:p-10">
-                                    <h2 className="mb-7 text-2xl font-bold text-gray-800">
+                                <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-lg shadow-emerald-200 lg:p-10 dark:border dark:border-white/20 dark:bg-gray-900 dark:shadow-gray-700">
+                                    <h2 className="mb-7 text-2xl font-bold text-gray-800 dark:text-white">
                                         Send us a message
                                     </h2>
 
                                     <form className="space-y-6">
                                         <div className="grid gap-6 sm:grid-cols-2">
+                                            {/* Full Name */}
                                             <div>
-                                                <label className="mb-2 block text-sm font-medium text-gray-700">
+                                                <label className="mb-2 block text-sm font-medium text-gray-700 dark:text-gray-300">
                                                     Full Name
                                                 </label>
                                                 <input
                                                     type="text"
-                                                    className="w-full rounded-lg border border-gray-300 px-4 py-3 transition-all outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500"
                                                     placeholder="John Doe"
                                                     required
+                                                    className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 transition-all outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400 dark:focus:border-emerald-400 dark:focus:ring-emerald-400"
                                                 />
                                             </div>
+
+                                            {/* Email */}
                                             <div>
-                                                <label className="mb-2 block text-sm font-medium text-gray-700">
+                                                <label className="mb-2 block text-sm font-medium text-gray-700 dark:text-gray-300">
                                                     Email
                                                 </label>
                                                 <input
                                                     type="email"
-                                                    className="w-full rounded-lg border border-gray-300 px-4 py-3 transition-all outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500"
                                                     placeholder="you@example.com"
                                                     required
+                                                    className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 transition-all outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400 dark:focus:border-emerald-400 dark:focus:ring-emerald-400"
                                                 />
                                             </div>
                                         </div>
 
+                                        {/* Subject */}
                                         <div>
-                                            <label className="mb-2 block text-sm font-medium text-gray-700">
+                                            <label className="mb-2 block text-sm font-medium text-gray-700 dark:text-gray-300">
                                                 Subject
                                             </label>
-                                            <select className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 transition-all outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500">
+                                            <select className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 transition-all outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:focus:border-emerald-400 dark:focus:ring-emerald-400">
                                                 <option>
                                                     General Question
                                                 </option>
@@ -124,19 +128,21 @@ export default function About() {
                                             </select>
                                         </div>
 
+                                        {/* Message */}
                                         <div>
-                                            <label className="mb-2 block text-sm font-medium text-gray-700">
+                                            <label className="mb-2 block text-sm font-medium text-gray-700 dark:text-gray-300">
                                                 Message
                                             </label>
                                             <textarea
-                                                className="w-full resize-none rounded-lg border border-gray-300 px-4 py-3 transition-all outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500"
                                                 placeholder="Describe the inquiry or your question"
+                                                className="w-full resize-none rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 transition-all outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400 dark:focus:border-emerald-400 dark:focus:ring-emerald-400"
                                             ></textarea>
                                         </div>
 
+                                        {/* Button */}
                                         <button
                                             type="submit"
-                                            className="w-full transform rounded-xl bg-emerald-600 px-8 py-4 font-medium text-white shadow-lg shadow-emerald-200/40 transition-all duration-300 hover:-translate-y-0.5 hover:bg-emerald-700 hover:shadow-emerald-300/50"
+                                            className="w-full transform rounded-xl bg-emerald-600 px-8 py-4 font-medium text-white shadow-lg shadow-emerald-200/40 transition-all duration-300 hover:-translate-y-0.5 hover:bg-emerald-700 hover:shadow-emerald-300/50 dark:bg-emerald-500 dark:shadow-emerald-900/40 dark:hover:bg-emerald-600"
                                         >
                                             Send Message
                                         </button>
@@ -146,12 +152,12 @@ export default function About() {
 
                             {/* Map  */}
                             <div className="space-y-8 lg:sticky lg:top-8">
-                                <div className="overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-xl shadow-gray-200/40">
+                                <div className="overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-lg shadow-emerald-200 dark:border dark:border-white/20 dark:bg-gray-900 dark:shadow-gray-700">
                                     <div className="border-b border-gray-100 p-6">
-                                        <h3 className="text-xl font-semibold text-gray-800">
+                                        <h3 className="text-xl font-semibold text-gray-800 dark:text-white">
                                             Our Office
                                         </h3>
-                                        <p className="mt-1 text-gray-600">
+                                        <p className="mt-1 text-gray-600 dark:text-gray-100">
                                             Municipal Environment and Natural
                                             Resources Office
                                         </p>
