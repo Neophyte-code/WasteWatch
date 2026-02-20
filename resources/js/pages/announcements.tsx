@@ -53,31 +53,27 @@ export default function Announcement() {
                     </div>
 
                     {/* Grid of announcement cards – max 3 per row on large screens */}
-                    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-2">
                         {/* Card 1 */}
-                        <div className="group relative flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition-all hover:shadow-md hover:shadow-green-100/50">
+                        <div className="group relative flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition-all hover:shadow-md hover:shadow-green-100/50 dark:border dark:border-white/20 dark:bg-gray-900">
                             <div className="h-2 bg-linear-to-r from-green-600 to-emerald-500"></div>
                             <div className="flex flex-1 flex-col p-5 md:p-6">
-                                <h3 className="mb-3 line-clamp-2 text-xl font-semibold text-gray-900">
+                                <h3 className="mb-3 line-clamp-2 text-xl font-semibold text-gray-900 dark:text-white">
                                     Solid Waste Management Seminar & IEC
                                     Campaign
                                 </h3>
 
-                                <div className="mb-4 space-y-2 text-sm text-gray-600">
+                                <div className="mb-4 space-y-2 text-sm text-gray-900 dark:text-gray-300">
                                     <div className="flex items-center gap-2">
-                                        <span className="font-medium">
-                                            Date:
-                                        </span>
+                                        <span className="font-bold">Date:</span>
                                         <span>March 15, 2026</span>
                                     </div>
                                     <div className="flex items-center gap-2">
-                                        <span className="font-medium">
-                                            Time:
-                                        </span>
+                                        <span className="font-bold">Time:</span>
                                         <span>8:00 AM – 12:00 PM</span>
                                     </div>
                                     <div className="flex items-center gap-2">
-                                        <span className="font-medium">
+                                        <span className="font-bold">
                                             Venue:
                                         </span>
                                         <span className="line-clamp-1">
@@ -85,16 +81,14 @@ export default function Announcement() {
                                         </span>
                                     </div>
                                     <div className="flex items-center gap-2">
-                                        <span className="font-medium">
-                                            For:
-                                        </span>
+                                        <span className="font-bold">For:</span>
                                         <span>
                                             All commercial establishments
                                         </span>
                                     </div>
                                 </div>
-                                <div className="rounded bg-gray-300 p-2">
-                                    <p className="mb-6 line-clamp-4 text-gray-700">
+                                <div className="ddark:border-gray-600 mt-5 rounded bg-gray-200 p-2 dark:bg-gray-800">
+                                    <p className="mb-6 text-justify indent-10 text-gray-900 dark:text-white">
                                         The MENRO invites all barangay
                                         officials, market vendors, and household
                                         representatives to our quarterly
@@ -110,28 +104,24 @@ export default function Announcement() {
                         </div>
 
                         {/* Card 2*/}
-                        <div className="group relative flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition-all hover:shadow-md hover:shadow-green-100/50">
+                        <div className="group relative flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition-all hover:shadow-md hover:shadow-green-100/50 dark:border dark:border-white/20 dark:bg-gray-900">
                             <div className="h-2 bg-linear-to-r from-blue-600 to-indigo-500"></div>
                             <div className="flex flex-1 flex-col p-5 md:p-6">
-                                <h3 className="mb-3 line-clamp-2 text-xl font-semibold text-gray-900">
+                                <h3 className="mb-3 line-clamp-2 text-xl font-semibold text-gray-900 dark:text-white">
                                     Deadline: Plastic Bag Ban Compliance Report
                                 </h3>
 
-                                <div className="mb-4 space-y-2 text-sm text-gray-600">
+                                <div className="mb-4 space-y-2 text-sm text-gray-900 dark:text-gray-300">
                                     <div className="flex items-center gap-2">
-                                        <span className="font-medium">
-                                            Date:
-                                        </span>
+                                        <span className="font-bold">Date:</span>
                                         <span>March 15, 2026</span>
                                     </div>
                                     <div className="flex items-center gap-2">
-                                        <span className="font-medium">
-                                            Time:
-                                        </span>
+                                        <span className="font-bold">Time:</span>
                                         <span>8:00 AM – 12:00 PM</span>
                                     </div>
                                     <div className="flex items-center gap-2">
-                                        <span className="font-medium">
+                                        <span className="font-bold">
                                             Venue:
                                         </span>
                                         <span className="line-clamp-1">
@@ -139,49 +129,45 @@ export default function Announcement() {
                                         </span>
                                     </div>
                                     <div className="flex items-center gap-2">
-                                        <span className="font-medium">
-                                            For:
-                                        </span>
+                                        <span className="font-bold">For:</span>
                                         <span>
                                             All commercial establishments
                                         </span>
                                     </div>
                                 </div>
-                                <div className="rounded bg-gray-300 p-2">
-                                    <p className="mb-6 line-clamp-4 text-gray-700">
+                                <div className="ddark:border-gray-600 mt-5 rounded bg-gray-200 p-2 dark:bg-gray-800">
+                                    <p className="mb-6 text-justify indent-10 text-gray-900 dark:text-white">
                                         All businesses are reminded to submit
                                         their 1st quarter plastic bag reduction
                                         report. Non-compliance may result in
                                         corresponding penalties per City
-                                        Ordinance...
+                                        Ordinance. All businesses are reminded
+                                        to submit their 1st quarter plastic bag
+                                        reduction report.
                                     </p>
                                 </div>
                             </div>
                         </div>
 
                         {/* Card 3  */}
-                        <div className="group relative flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition-all hover:shadow-md hover:shadow-green-100/50">
+                        <div className="group relative flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition-all hover:shadow-md hover:shadow-green-100/50 dark:border dark:border-white/20 dark:bg-gray-900">
                             <div className="h-2 bg-linear-to-r from-amber-500 to-orange-500"></div>
                             <div className="flex flex-1 flex-col p-5 md:p-6">
-                                <h3 className="mb-3 line-clamp-2 text-xl font-semibold text-gray-900">
+                                <h3 className="mb-3 line-clamp-2 text-xl font-semibold text-gray-900 dark:text-white">
                                     Barangay Eco-Enforcers Refresher Course
                                 </h3>
 
-                                <div className="mb-4 space-y-2 text-sm text-gray-600">
+                                <div className="mb-4 space-y-2 text-sm text-gray-900 dark:text-gray-300">
                                     <div className="flex items-center gap-2">
-                                        <span className="font-medium">
-                                            Date:
-                                        </span>
+                                        <span className="font-bold">Date:</span>
                                         <span>March 15, 2026</span>
                                     </div>
                                     <div className="flex items-center gap-2">
-                                        <span className="font-medium">
-                                            Time:
-                                        </span>
+                                        <span className="font-bold">Time:</span>
                                         <span>8:00 AM – 12:00 PM</span>
                                     </div>
                                     <div className="flex items-center gap-2">
-                                        <span className="font-medium">
+                                        <span className="font-bold">
                                             Venue:
                                         </span>
                                         <span className="line-clamp-1">
@@ -189,20 +175,20 @@ export default function Announcement() {
                                         </span>
                                     </div>
                                     <div className="flex items-center gap-2">
-                                        <span className="font-medium">
-                                            For:
-                                        </span>
+                                        <span className="font-bold">For:</span>
                                         <span>
                                             All commercial establishments
                                         </span>
                                     </div>
                                 </div>
-                                <div className="rounded bg-gray-300 p-2">
-                                    <p className="mb-6 line-clamp-4 text-gray-700">
+                                <div className="ddark:border-gray-600 mt-5 rounded bg-gray-200 p-2 dark:bg-gray-800">
+                                    <p className="mb-6 text-justify indent-10 text-gray-900 dark:text-white">
                                         Mandatory refresher for all barangay
                                         eco-enforcers. New monitoring tools and
                                         updated sanction guidelines will be
-                                        discussed...
+                                        discussed. All businesses are reminded
+                                        to submit their 1st quarter plastic bag
+                                        reduction report.
                                     </p>
                                 </div>
                             </div>

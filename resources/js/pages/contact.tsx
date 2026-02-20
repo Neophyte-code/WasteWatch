@@ -16,7 +16,7 @@ export default function Contact() {
             <Head title="Contact" />
             <div className="flex h-full flex-1 flex-col justify-center gap-4 overflow-x-auto rounded-xl p-4">
                 {/* Header / Hero Section */}
-                <section className="relative overflow-hidden bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 pt-16 pb-20 text-white md:pt-20 md:pb-28">
+                <section className="relative overflow-hidden bg-linear-to-br from-emerald-600 via-teal-600 to-cyan-600 pt-16 pb-20 text-white md:pt-20 md:pb-28">
                     <div className="absolute inset-0 opacity-10">
                         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(255,255,255,0.2)_0%,transparent_50%)]"></div>
                     </div>
