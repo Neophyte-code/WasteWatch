@@ -27,8 +27,8 @@ export default function About() {
                         </h1>
                         <p className="mx-auto max-w-3xl text-lg leading-relaxed text-emerald-50/90 md:text-xl">
                             Have a waste issue to report or need help with our
-                            platform? We're here to help keep our city clean and
-                            beautiful.
+                            platform? We're here to help keep our minicipality
+                            clean and beautiful.
                         </p>
                     </div>
                 </section>
@@ -41,38 +41,32 @@ export default function About() {
                                 {/* Contact Cards */}
                                 <div className="grid gap-6 sm:grid-cols-2">
                                     <div className="group rounded-2xl border border-gray-100 bg-white p-7 shadow-lg shadow-emerald-100/40 transition-all duration-300 hover:border-emerald-200">
-                                        <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-emerald-100 text-emerald-600 transition-colors group-hover:bg-emerald-600 group-hover:text-white">
-                                            <i className="fas fa-phone-volume text-2xl"></i>
+                                        <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-emerald-100 text-4xl text-emerald-600 transition-colors group-hover:bg-emerald-300 group-hover:text-white">
+                                            📞
                                         </div>
                                         <h3 className="mb-2 text-xl font-semibold text-gray-800">
                                             Call Us
                                         </h3>
-                                        <p className="text-gray-600">
-                                            Mon–Fri 8:00–18:00
-                                        </p>
                                         <a
                                             href="tel:+421248112233"
                                             className="mt-1 block font-medium text-emerald-600 hover:text-emerald-700"
                                         >
-                                            +421 2 4811 2233
+                                            +63 32 437 3782
                                         </a>
                                     </div>
 
                                     <div className="group rounded-2xl border border-gray-100 bg-white p-7 shadow-lg shadow-emerald-100/40 transition-all duration-300 hover:border-emerald-200">
-                                        <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-emerald-100 text-emerald-600 transition-colors group-hover:bg-emerald-600 group-hover:text-white">
-                                            <i className="fas fa-envelope text-2xl"></i>
+                                        <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-emerald-100 text-4xl text-emerald-600 transition-colors group-hover:bg-emerald-300 group-hover:text-white">
+                                            📧
                                         </div>
                                         <h3 className="mb-2 text-xl font-semibold text-gray-800">
                                             Email
                                         </h3>
-                                        <p className="text-gray-600">
-                                            We reply within 24 hours
-                                        </p>
                                         <a
-                                            href="mailto:support@cleancity.report"
-                                            className="mt-1 block font-medium text-emerald-600 hover:text-emerald-700"
+                                            href="mailto:"
+                                            className="mt-1 block font-medium wrap-break-word text-emerald-600 hover:text-emerald-700"
                                         >
-                                            support@cleancity.report
+                                            menrodaanbantayanoffice@gmail.com
                                         </a>
                                     </div>
                                 </div>
@@ -136,7 +130,7 @@ export default function About() {
                                             </label>
                                             <textarea
                                                 className="w-full resize-none rounded-lg border border-gray-300 px-4 py-3 transition-all outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500"
-                                                placeholder="Describe the issue or your question..."
+                                                placeholder="Describe the inquiry or your question"
                                             ></textarea>
                                         </div>
 
@@ -144,7 +138,7 @@ export default function About() {
                                             type="submit"
                                             className="w-full transform rounded-xl bg-emerald-600 px-8 py-4 font-medium text-white shadow-lg shadow-emerald-200/40 transition-all duration-300 hover:-translate-y-0.5 hover:bg-emerald-700 hover:shadow-emerald-300/50"
                                         >
-                                            Send Message →
+                                            Send Message
                                         </button>
                                     </form>
                                 </div>
@@ -158,14 +152,15 @@ export default function About() {
                                             Our Office
                                         </h3>
                                         <p className="mt-1 text-gray-600">
-                                            Municipal Waste Management Center
+                                            Municipal Environment and Natural
+                                            Resources Office
                                         </p>
                                     </div>
-                                    <div className="map-container h-96 lg:h-[480px]">
+                                    <div className="map-container h-96 lg:h-120">
                                         <iframe
-                                            className="h-full w-full border-0"
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3490.206279232356!2d124.00324347444888!3d11.25351645021372!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a8770956e13b3f%3A0x6e34bf4e4df9f1d8!2sTESDA%20Provincial%20Training%20Center%20-%20Daanbantayan!5e1!3m2!1sen!2sjp!4v1771592891983!5m2!1sen!2sjp"
+                                            className="h-full w-full"
                                             loading="lazy"
-                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.991625678456!2d2.352221776712955!3d48.85661410000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e1f06e2b70f%3A0x40b82c3688c9460!2sParis%2C%20France!5e0!3m2!1sen!2sus!4v1698765432100!5m2!1sen!2sus"
                                         ></iframe>
                                     </div>
                                 </div>

@@ -24,7 +24,7 @@ export default function About() {
                         </div>
 
                         <h1 className="mb-8 text-5xl leading-none font-extrabold tracking-tight sm:text-6xl lg:text-7xl xl:text-8xl">
-                            <span className="bg-gradient-to-r from-green-500 to-yellow-500 bg-clip-text text-transparent">
+                            <span className="bg-linear-to-r from-green-500 to-yellow-500 bg-clip-text text-transparent">
                                 WasteWatch
                             </span>
                         </h1>
