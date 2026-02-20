@@ -49,8 +49,17 @@ jobs:
       - name: Generate Application Key
         run: php artisan key:generate
 
+      - name: Run Migrations
+        run: php artisan migrate --force
+        env:
+          DB_CONNECTION: sqlite
+          DB_DATABASE: ":memory:"
+
       - name: Build Assets
         run: npm run build
 
       - name: Tests
         run: ./vendor/bin/pest
+        env:
+          DB_CONNECTION: sqlite
+          DB_DATABASE: ":memory:"
