@@ -16,7 +16,7 @@ export default function Dashboard() {
         <AppLayout breadcrumbs={breadcrumbs}>
             <Head title="Dashboard" />
             <div className="flex h-full flex-1 gap-4 overflow-x-auto rounded-xl p-4">
-                <div className="relative flex min-h-[100vh] flex-2 flex-col justify-center overflow-hidden rounded-xl text-base/8 md:min-h-min">
+                <div className="relative flex min-h-screen flex-2 flex-col justify-center overflow-hidden rounded-xl text-base/8 md:min-h-min">
                     <h2 className="text-4xl font-bold">
                         Welcome to Waste
                         <span className="text-green-600">Watch</span>
@@ -41,7 +41,7 @@ export default function Dashboard() {
                         </Button>
                     </div>
                 </div>
-                <div className="relative flex min-h-[100vh] flex-1 items-center justify-center overflow-hidden rounded-xl md:min-h-min">
+                <div className="relative flex min-h-screen flex-1 items-center justify-center overflow-hidden rounded-xl md:min-h-min">
                     <img
                         src="/images/logo.png"
                         alt="logo"

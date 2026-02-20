@@ -10,7 +10,7 @@ const breadcrumbs: BreadcrumbItem[] = [
     },
 ];
 
-export default function About() {
+export default function Contact() {
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
             <Head title="Contact" />
