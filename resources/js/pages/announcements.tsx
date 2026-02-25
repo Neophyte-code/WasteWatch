@@ -2,6 +2,7 @@ import { Head } from '@inertiajs/react';
 import AppLayout from '@/layouts/app-layout';
 import type { BreadcrumbItem } from '@/types';
 import { dashboard } from '@/routes';
+import { useState, useMemo } from 'react';
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
@@ -33,6 +34,19 @@ interface Props {
 }
 
 export default function Announcement({ announcements }: Props) {
+    // logic for search filter
+    const [searchQuery, setSearchQuery] = useState('');
+
+    const query = searchQuery.toLowerCase();
+
+    const filteredAnnouncements = announcements.filter((item) => {
+        return (
+            item.what.toLowerCase().includes(query) ||
+            item.location.toLowerCase().includes(query) ||
+            item.message.toLowerCase().includes(query)
+        );
+    });
+
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
             <Head title="Announcement" />
@@ -55,6 +69,10 @@ export default function Announcement({ announcements }: Props) {
                                 <input
                                     type="text"
                                     placeholder="Search announcements..."
+                                    value={searchQuery}
+                                    onChange={(e) =>
+                                        setSearchQuery(e.target.value)
+                                    }
                                     className="w-full rounded-lg bg-white/20 px-4 py-2.5 pl-10 text-white placeholder-green-100 focus:bg-white/30 focus:ring-2 focus:ring-green-300 focus:outline-none"
                                 />
                                 <svg
@@ -75,10 +93,9 @@ export default function Announcement({ announcements }: Props) {
                     </div>
                     <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-2">
                         {/* Card 1 */}
-                        {announcements.map((announcement, i) => {
+                        {filteredAnnouncements.map((announcement, i) => {
                             const selectedGradient =
                                 gradients[i % gradients.length];
-
                             return (
                                 <div
                                     key={announcement.id}
