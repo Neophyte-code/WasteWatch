@@ -99,7 +99,7 @@ export default function Announcement({ announcements }: Props) {
                             return (
                                 <div
                                     key={announcement.id}
-                                    className="group relative flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition-all hover:shadow-md hover:shadow-green-100/50 dark:border dark:border-white/20 dark:bg-gray-900"
+                                    className="group relative flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-md transition-all hover:shadow-md hover:shadow-gray-400 dark:border dark:border-white/20 dark:bg-gray-900"
                                 >
                                     <div
                                         className={`h-2 bg-linear-to-r ${selectedGradient}`}
