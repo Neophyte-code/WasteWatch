@@ -10,7 +10,29 @@ const breadcrumbs: BreadcrumbItem[] = [
     },
 ];
 
-export default function Announcement() {
+const gradients = [
+    'from-green-600 to-emerald-500',
+    'from-blue-600 to-indigo-500',
+    'from-amber-500 to-orange-500',
+    'from-rose-500 to-red-600',
+    'from-purple-500 to-violet-600',
+];
+
+interface Announcemnt {
+    id: number;
+    what: string;
+    to: string;
+    date: string;
+    time: string;
+    location: string;
+    message: string;
+}
+
+interface Props {
+    announcements: Announcemnt[];
+}
+
+export default function Announcement({ announcements }: Props) {
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
             <Head title="Announcement" />
@@ -51,148 +73,63 @@ export default function Announcement() {
                             </div>
                         </div>
                     </div>
-
-                    {/* Grid of announcement cards – max 3 per row on large screens */}
                     <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-2">
                         {/* Card 1 */}
-                        <div className="group relative flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition-all hover:shadow-md hover:shadow-green-100/50 dark:border dark:border-white/20 dark:bg-gray-900">
-                            <div className="h-2 bg-linear-to-r from-green-600 to-emerald-500"></div>
-                            <div className="flex flex-1 flex-col p-5 md:p-6">
-                                <h3 className="mb-3 line-clamp-2 text-xl font-semibold text-gray-900 dark:text-white">
-                                    Solid Waste Management Seminar & IEC
-                                    Campaign
-                                </h3>
+                        {announcements.map((announcement, i) => {
+                            const selectedGradient =
+                                gradients[i % gradients.length];
 
-                                <div className="mb-4 space-y-2 text-sm text-gray-900 dark:text-gray-300">
-                                    <div className="flex items-center gap-2">
-                                        <span className="font-bold">Date:</span>
-                                        <span>March 15, 2026</span>
-                                    </div>
-                                    <div className="flex items-center gap-2">
-                                        <span className="font-bold">Time:</span>
-                                        <span>8:00 AM – 12:00 PM</span>
-                                    </div>
-                                    <div className="flex items-center gap-2">
-                                        <span className="font-bold">
-                                            Venue:
-                                        </span>
-                                        <span className="line-clamp-1">
-                                            Cebu City Hall – Function Room B
-                                        </span>
-                                    </div>
-                                    <div className="flex items-center gap-2">
-                                        <span className="font-bold">For:</span>
-                                        <span>
-                                            All commercial establishments
-                                        </span>
-                                    </div>
-                                </div>
-                                <div className="ddark:border-gray-600 mt-5 rounded bg-gray-200 p-2 dark:bg-gray-800">
-                                    <p className="mb-6 text-justify indent-10 text-gray-900 dark:text-white">
-                                        The MENRO invites all barangay
-                                        officials, market vendors, and household
-                                        representatives to our quarterly
-                                        seminar. Topics include proper
-                                        segregation, updated ordinances,
-                                        composting demo, and best barangay
-                                        incentives. All businesses are reminded
-                                        to submit their 1st quarter plastic bag
-                                        reduction report.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                            return (
+                                <div
+                                    key={announcement.id}
+                                    className="group relative flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition-all hover:shadow-md hover:shadow-green-100/50 dark:border dark:border-white/20 dark:bg-gray-900"
+                                >
+                                    <div
+                                        className={`h-2 bg-linear-to-r ${selectedGradient}`}
+                                    ></div>
 
-                        {/* Card 2*/}
-                        <div className="group relative flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition-all hover:shadow-md hover:shadow-green-100/50 dark:border dark:border-white/20 dark:bg-gray-900">
-                            <div className="h-2 bg-linear-to-r from-blue-600 to-indigo-500"></div>
-                            <div className="flex flex-1 flex-col p-5 md:p-6">
-                                <h3 className="mb-3 line-clamp-2 text-xl font-semibold text-gray-900 dark:text-white">
-                                    Deadline: Plastic Bag Ban Compliance Report
-                                </h3>
+                                    <div className="flex flex-1 flex-col p-5 md:p-6">
+                                        <h3 className="mb-3 line-clamp-2 text-xl font-semibold text-gray-900 dark:text-white">
+                                            {announcement.what}
+                                        </h3>
 
-                                <div className="mb-4 space-y-2 text-sm text-gray-900 dark:text-gray-300">
-                                    <div className="flex items-center gap-2">
-                                        <span className="font-bold">Date:</span>
-                                        <span>March 15, 2026</span>
-                                    </div>
-                                    <div className="flex items-center gap-2">
-                                        <span className="font-bold">Time:</span>
-                                        <span>8:00 AM – 12:00 PM</span>
-                                    </div>
-                                    <div className="flex items-center gap-2">
-                                        <span className="font-bold">
-                                            Venue:
-                                        </span>
-                                        <span className="line-clamp-1">
-                                            Cebu City Hall – Function Room B
-                                        </span>
-                                    </div>
-                                    <div className="flex items-center gap-2">
-                                        <span className="font-bold">For:</span>
-                                        <span>
-                                            All commercial establishments
-                                        </span>
-                                    </div>
-                                </div>
-                                <div className="ddark:border-gray-600 mt-5 rounded bg-gray-200 p-2 dark:bg-gray-800">
-                                    <p className="mb-6 text-justify indent-10 text-gray-900 dark:text-white">
-                                        All businesses are reminded to submit
-                                        their 1st quarter plastic bag reduction
-                                        report. Non-compliance may result in
-                                        corresponding penalties per City
-                                        Ordinance. All businesses are reminded
-                                        to submit their 1st quarter plastic bag
-                                        reduction report.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Card 3  */}
-                        <div className="group relative flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition-all hover:shadow-md hover:shadow-green-100/50 dark:border dark:border-white/20 dark:bg-gray-900">
-                            <div className="h-2 bg-linear-to-r from-amber-500 to-orange-500"></div>
-                            <div className="flex flex-1 flex-col p-5 md:p-6">
-                                <h3 className="mb-3 line-clamp-2 text-xl font-semibold text-gray-900 dark:text-white">
-                                    Barangay Eco-Enforcers Refresher Course
-                                </h3>
-
-                                <div className="mb-4 space-y-2 text-sm text-gray-900 dark:text-gray-300">
-                                    <div className="flex items-center gap-2">
-                                        <span className="font-bold">Date:</span>
-                                        <span>March 15, 2026</span>
-                                    </div>
-                                    <div className="flex items-center gap-2">
-                                        <span className="font-bold">Time:</span>
-                                        <span>8:00 AM – 12:00 PM</span>
-                                    </div>
-                                    <div className="flex items-center gap-2">
-                                        <span className="font-bold">
-                                            Venue:
-                                        </span>
-                                        <span className="line-clamp-1">
-                                            Cebu City Hall – Function Room B
-                                        </span>
-                                    </div>
-                                    <div className="flex items-center gap-2">
-                                        <span className="font-bold">For:</span>
-                                        <span>
-                                            All commercial establishments
-                                        </span>
+                                        <div className="mb-4 space-y-2 text-sm text-gray-900 dark:text-gray-300">
+                                            <div className="flex items-center gap-2">
+                                                <span className="font-bold">
+                                                    Date:
+                                                </span>
+                                                <span>{announcement.date}</span>
+                                            </div>
+                                            <div className="flex items-center gap-2">
+                                                <span className="font-bold">
+                                                    Time:
+                                                </span>
+                                                <span>{announcement.time}</span>
+                                            </div>
+                                            <div className="flex items-center gap-2">
+                                                <span className="font-bold">
+                                                    Venue:
+                                                </span>
+                                                <span className="line-clamp-1">
+                                                    {announcement.location}
+                                                </span>
+                                            </div>
+                                            <div className="flex items-center gap-2">
+                                                <span className="font-bold">
+                                                    For:
+                                                </span>
+                                                <span>{announcement.to}</span>
+                                            </div>
+                                        </div>
+                                        <div className="ddark:border-gray-600 mt-5 rounded bg-gray-200 p-2 dark:bg-gray-800">
+                                            <p className="mb-6 text-justify indent-10 text-gray-900 dark:text-white">
+                                                {announcement.message}
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                                <div className="ddark:border-gray-600 mt-5 rounded bg-gray-200 p-2 dark:bg-gray-800">
-                                    <p className="mb-6 text-justify indent-10 text-gray-900 dark:text-white">
-                                        Mandatory refresher for all barangay
-                                        eco-enforcers. New monitoring tools and
-                                        updated sanction guidelines will be
-                                        discussed. All businesses are reminded
-                                        to submit their 1st quarter plastic bag
-                                        reduction report.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                            );
+                        })}
                     </div>
                 </div>
             </div>
