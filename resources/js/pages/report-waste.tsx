@@ -42,8 +42,21 @@ export default function Waste() {
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
             <Head title="Report Waste" />
-            <div className="flex h-full flex-1 items-center justify-center gap-4 overflow-x-auto rounded-xl p-4">
-                <div className="flex h-full w-2xl flex-col gap-2 rounded p-5 shadow-2xl shadow-gray-500">
+            <div className="flex h-full flex-col items-center justify-center gap-4 overflow-x-auto rounded-xl p-4">
+                <div className="flex flex-col items-center rounded-2xl border border-green-100 bg-linear-to-br p-6 text-center shadow-sm transition-all duration-300 hover:shadow-md sm:p-8 dark:border dark:border-gray-700">
+                    <h1 className="mb-3 text-4xl leading-none font-extrabold tracking-tight sm:text-4xl lg:text-4xl xl:text-5xl">
+                        <span className="bg-linear-to-r from-green-600 via-emerald-500 to-yellow-500 bg-clip-text text-transparent">
+                            Report Waste
+                        </span>
+                    </h1>
+
+                    <p className="mx-auto max-w-2xl text-sm leading-relaxed font-normal text-gray-600 sm:text-base md:text-lg dark:text-gray-300">
+                        Your report helps authorities locate problem areas and
+                        take action to keep the community clean.
+                    </p>
+                </div>
+
+                <div className="mx-auto flex h-full w-full flex-col gap-2 rounded p-10 shadow-2xl shadow-gray-500 md:max-w-2xl dark:border dark:border-gray-700 dark:shadow-md">
                     {/* Image upload */}
                     <div>
                         <h1 className="font-bold">Upload Waste Image</h1>
