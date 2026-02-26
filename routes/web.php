@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use Laravel\Fortify\Features;
 use App\Http\Controllers\AnnouncementController;
-
+use App\Http\Controllers\ReportController;
 
 Route::get('/', function () {
     return Inertia::render('welcome', [
@@ -26,5 +26,6 @@ Route::get('/contact', function () {
 })->middleware(['auth', 'verified'])->name('/contact');
 
 Route::get('/announcement', [AnnouncementController::class, 'index'])->name('announcements');
+Route::get('/report-waste', [ReportController::class, 'waste'])->name('report-waste');
 
 require __DIR__ . '/settings.php';

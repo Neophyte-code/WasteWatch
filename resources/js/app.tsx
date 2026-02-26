@@ -4,9 +4,20 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import '../css/app.css';
 import { initializeTheme } from './hooks/use-appearance';
+import { createSystem, defaultConfig, ChakraProvider } from '@chakra-ui/react';
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
+const customSystem = createSystem(defaultConfig, {
+    preflight: false,
+
+    globalCss: {
+        'html, body': {
+            margin: 0,
+            padding: 0,
+        },
+    },
+});
 createInertiaApp({
     title: (title) => (title ? `${title} - ${appName}` : appName),
     resolve: (name) =>
@@ -19,7 +30,9 @@ createInertiaApp({
 
         root.render(
             <StrictMode>
-                <App {...props} />
+                <ChakraProvider value={customSystem}>
+                    <App {...props} />
+                </ChakraProvider>
             </StrictMode>,
         );
     },
