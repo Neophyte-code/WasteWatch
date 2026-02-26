@@ -88,7 +88,7 @@ export default function About() {
                             </div>
                         </div>
 
-                        <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-white/15 shadow-2xl backdrop-blur-2xl hover:shadow-lg hover:shadow-neutral-500 lg:aspect-square">
+                        <div className="relative aspect-4/3 overflow-hidden rounded-3xl border border-white/15 shadow-2xl backdrop-blur-2xl hover:shadow-lg hover:shadow-neutral-500 lg:aspect-square">
                             <div className="absolute inset-0 flex items-center justify-center bg-[url(/images/seedling.jpg)] bg-cover px-10 text-center text-white"></div>
                         </div>
                     </div>

@@ -27,5 +27,6 @@ Route::get('/contact', function () {
 
 Route::get('/announcement', [AnnouncementController::class, 'index'])->name('announcements');
 Route::get('/report-waste', [ReportController::class, 'waste'])->name('report-waste');
+Route::get('/report-litterer', [ReportController::class, 'litterer'])->name('report-litterer');
 
 require __DIR__ . '/settings.php';
