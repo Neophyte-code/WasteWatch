@@ -29,5 +29,5 @@ Route::get('/announcement', [AnnouncementController::class, 'index'])->name('ann
 Route::get('/report-waste', [ReportController::class, 'waste'])->name('report-waste');
 Route::get('/report-litterer', [ReportController::class, 'litterer'])->name('report-litterer');
 Route::post('/report-waste', [ReportController::class, 'wasteStore'])->name('waste-reports.store');
-
+Route::post('/report-litterer', [ReportController::class, 'littererStore'])->name('litterer-reports.store');
 require __DIR__ . '/settings.php';

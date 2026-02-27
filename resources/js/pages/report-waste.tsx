@@ -12,7 +12,7 @@ import {
 import { Upload } from 'lucide-react';
 import LocationPicker from '@/components/LocationPicker';
 import { usePage, useForm } from '@inertiajs/react';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { Alert, Stack } from '@chakra-ui/react';
 
 //functionality for image upload

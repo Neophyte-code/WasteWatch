@@ -6,20 +6,22 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class WasteReport extends Model
+class LittererReport extends Model
 {
     //
     protected $fillable = [
-        'waste_type',
-        'weight',
+        'name',
+        'estimated_age',
+        'gender',
+        'distinguishing_features',
         'latitude',
         'longitude',
-        'user_id',
+        'user_id'
     ];
 
     public function images(): HasMany
     {
-        return $this->hasMany(ReportImage::class);
+        return $this->hasMany(LittererImage::class);
     }
 
     public function user(): BelongsTo
