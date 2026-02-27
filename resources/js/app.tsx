@@ -5,6 +5,8 @@ import { createRoot } from 'react-dom/client';
 import '../css/app.css';
 import { initializeTheme } from './hooks/use-appearance';
 import { createSystem, defaultConfig, ChakraProvider } from '@chakra-ui/react';
+import 'leaflet/dist/leaflet.css';
+import { route } from 'ziggy-js';
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
@@ -27,6 +29,13 @@ createInertiaApp({
         ),
     setup({ el, App, props }) {
         const root = createRoot(el);
+
+        (window as any).route = (
+            name: any,
+            params: any,
+            absolute: any,
+            config: any = props.initialPage.props.ziggy,
+        ) => route(name, params, absolute, config) as unknown as string;
 
         root.render(
             <StrictMode>
