@@ -1,19 +1,11 @@
 import { Head } from '@inertiajs/react';
 import AppLayout from '@/layouts/app-layout';
-import type { BreadcrumbItem } from '@/types';
-import { dashboard } from '@/routes';
 import { Button } from '@/components/ui/button';
-
-const breadcrumbs: BreadcrumbItem[] = [
-    {
-        title: 'Dashboard',
-        href: dashboard().url,
-    },
-];
+import { Link } from '@inertiajs/react';
 
 export default function Dashboard() {
     return (
-        <AppLayout breadcrumbs={breadcrumbs}>
+        <AppLayout>
             <Head title="Dashboard" />
             <div className="flex h-full flex-1 gap-4 overflow-x-auto rounded-xl p-4">
                 <div className="relative flex min-h-screen flex-2 flex-col justify-center overflow-hidden rounded-xl text-base/8 md:min-h-min">
@@ -33,11 +25,17 @@ export default function Dashboard() {
                         planet.
                     </p>
                     <div className="mt-4 flex gap-4">
-                        <Button className="h-10 border-2 border-green-600 bg-green-600 font-bold hover:bg-transparent hover:text-green-600 dark:text-white">
-                            Report Waste
+                        <Button
+                            asChild
+                            className="h-10 border-2 border-green-600 bg-green-600 font-bold hover:bg-transparent hover:text-green-600 dark:text-white"
+                        >
+                            <Link href="/report-waste">Report Waste</Link>
                         </Button>
-                        <Button className="h-10 border-2 border-green-600 bg-transparent font-bold text-green-600 hover:bg-green-600 hover:text-white dark:text-white">
-                            Report Litterer
+                        <Button
+                            asChild
+                            className="h-10 border-2 border-green-600 bg-transparent font-bold text-green-600 hover:bg-green-600 hover:text-white dark:text-white"
+                        >
+                            <Link href="/report-litterer">Report Litterer</Link>
                         </Button>
                     </div>
                 </div>

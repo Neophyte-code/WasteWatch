@@ -6,6 +6,7 @@ use Laravel\Fortify\Features;
 use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\ReportController;
 
+
 Route::get('/', function () {
     return Inertia::render('welcome', [
         'canRegister' => Features::enabled(Features::registration()),
